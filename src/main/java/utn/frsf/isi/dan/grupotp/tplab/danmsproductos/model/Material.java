@@ -2,15 +2,15 @@ package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-//@Entity
+@Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Material {
-   /*  @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -19,7 +19,18 @@ public class Material {
     private Integer stockMinimo;
 
     //TODO relaciones con las otras clases
+    public Material(Integer id, String nombre, String descripcion, Double precio, Integer stockActual, Integer stockMinimo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.stockActual = stockActual;
+        this.stockMinimo = stockMinimo;
+    }
 
+
+
+    public Material (){}
 
     public Integer getId() { return id; }
 
@@ -44,4 +55,6 @@ public class Material {
     public Integer getStockMinimo() { return stockMinimo; }
 
     public void setStockMinimo(Integer stockMinimo) { this.stockMinimo = stockMinimo; }
+
+
 }

@@ -2,18 +2,26 @@ package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-//@Entity
+@Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Provision {
-    /*  @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDate fechaProvision;
+
+    public Provision(Integer id, LocalDate fechaProvision) {
+        this.id = id;
+        this.fechaProvision = fechaProvision;
+    }
+
+    public Provision() {
+    }
 
     public Integer getId() {return id;}
 
