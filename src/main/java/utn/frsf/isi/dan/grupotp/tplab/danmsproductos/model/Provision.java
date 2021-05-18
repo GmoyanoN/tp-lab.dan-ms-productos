@@ -14,7 +14,6 @@ public class Provision {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDate fechaProvision;
-
     @OneToOne
     private ProvisionDetalle provisionDetalle;
 

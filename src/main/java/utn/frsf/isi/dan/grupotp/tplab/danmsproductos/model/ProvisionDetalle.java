@@ -13,7 +13,6 @@ public class ProvisionDetalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer cantidad;
-
     @OneToOne
     private Provision provision;
     @OneToOne

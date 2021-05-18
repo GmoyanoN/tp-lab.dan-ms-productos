@@ -17,8 +17,6 @@ public class Unidad {
         private String descripcion;
 
 
-
-
         public Unidad(Integer id, String descripcion) {
                 this.id = id;
                 this.descripcion = descripcion;

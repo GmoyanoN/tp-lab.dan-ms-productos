@@ -15,13 +15,12 @@ public class MovimientosStock {
     private Integer cantidadEntrada;
     private Integer cantidadSalida;
     private Instant Fecha;
-
     @ManyToOne
     private Material material;
-
     @OneToOne
     private ProvisionDetalle provisionDetalle;
-    //TODO relación con la readonly
+    @Transient
+    private DetallePedido detallePedido;
 
 
     public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha) {
