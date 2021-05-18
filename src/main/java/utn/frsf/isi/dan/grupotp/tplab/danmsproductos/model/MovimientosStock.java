@@ -16,7 +16,12 @@ public class MovimientosStock {
     private Integer cantidadSalida;
     private Instant Fecha;
 
-    //TODO relaciones con las otras clases
+    @ManyToOne
+    private Material material;
+
+    @OneToOne
+    private ProvisionDetalle provisionDetalle;
+    //TODO relación con la readonly
 
 
     public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha) {

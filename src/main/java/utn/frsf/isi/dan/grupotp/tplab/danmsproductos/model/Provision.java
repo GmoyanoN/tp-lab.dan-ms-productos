@@ -15,6 +15,9 @@ public class Provision {
     private Integer id;
     private LocalDate fechaProvision;
 
+    @OneToOne
+    private ProvisionDetalle provisionDetalle;
+
     public Provision(Integer id, LocalDate fechaProvision) {
         this.id = id;
         this.fechaProvision = fechaProvision;

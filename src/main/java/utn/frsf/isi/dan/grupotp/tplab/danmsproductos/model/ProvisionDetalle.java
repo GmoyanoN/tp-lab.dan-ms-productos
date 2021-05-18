@@ -14,6 +14,11 @@ public class ProvisionDetalle {
     private Integer id;
     private Integer cantidad;
 
+    @OneToOne
+    private Provision provision;
+    @OneToOne
+    private Material material;
+
     public ProvisionDetalle(Integer id, Integer cantidad) {
         this.id = id;
         this.cantidad = cantidad;

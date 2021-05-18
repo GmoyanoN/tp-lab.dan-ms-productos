@@ -16,7 +16,7 @@ public class Unidad {
         private Integer id;
         private String descripcion;
 
-        //TODO relaciones con las otras clases
+
 
 
         public Unidad(Integer id, String descripcion) {

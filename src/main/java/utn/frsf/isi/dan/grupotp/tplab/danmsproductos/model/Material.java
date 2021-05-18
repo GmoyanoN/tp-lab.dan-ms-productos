@@ -17,8 +17,9 @@ public class Material {
     private Double precio;
     private Integer stockActual;
     private Integer stockMinimo;
+    @OneToOne
+    private Unidad unidad;
 
-    //TODO relaciones con las otras clases
     public Material(Integer id, String nombre, String descripcion, Double precio, Integer stockActual, Integer stockMinimo) {
         this.id = id;
         this.nombre = nombre;
