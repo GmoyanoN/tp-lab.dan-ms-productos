@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(scope = MovimientosStock.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class MovimientosStock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,19 +15,21 @@ public class MovimientosStock {
     private Integer cantidadEntrada;
     private Integer cantidadSalida;
     private Instant Fecha;
-    @ManyToOne
+    @OneToOne
     private Material material;
     @OneToOne
     private ProvisionDetalle provisionDetalle;
     @Transient
     private DetallePedido detallePedido;
 
-
-    public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha) {
+    public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha, Material material, ProvisionDetalle provisionDetalle, DetallePedido detallePedido) {
         this.id = id;
         this.cantidadEntrada = cantidadEntrada;
         this.cantidadSalida = cantidadSalida;
-        Fecha = fecha;
+        this.Fecha = fecha;
+        this.material = material;
+        this.provisionDetalle = provisionDetalle;
+        this.detallePedido = detallePedido;
     }
 
     public MovimientosStock(){}

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(scope = Provision.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Provision {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

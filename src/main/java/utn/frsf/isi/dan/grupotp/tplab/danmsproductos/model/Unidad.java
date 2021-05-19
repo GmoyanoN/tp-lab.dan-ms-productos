@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(scope = Unidad.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Unidad {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
