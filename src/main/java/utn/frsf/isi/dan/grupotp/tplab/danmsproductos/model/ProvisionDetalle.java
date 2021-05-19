@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(scope = ProvisionDetalle.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ProvisionDetalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,11 @@ public class ProvisionDetalle {
     @OneToOne
     private Material material;
 
-    public ProvisionDetalle(Integer id, Integer cantidad) {
+    public ProvisionDetalle(Integer id, Integer cantidad, Provision provision, Material material) {
         this.id = id;
         this.cantidad = cantidad;
+        this.provision = provision;
+        this.material = material;
     }
 
     public ProvisionDetalle() {

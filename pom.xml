@@ -145,11 +145,11 @@
 				</executions>
 				<configuration>
 					<driver>com.mysql.cj.jdbc.Driver</driver>
-					<url>jdbc:mysql://localhost:3306/ms_usuarios_db</url>
-					<user>user_usuarios</user>
+					<url>jdbc:mysql://localhost:3306/ms_productos_db</url>
+					<user>user_productos</user>
 					<password>3be43125f05dc87c9b5f27533daf2f01</password>
 					<baselineOnMigrate>true</baselineOnMigrate>
-					<schemas>ms_usuarios_db</schemas>
+					<schemas>ms_productos_db</schemas>
 					<locations>
 						<location>
 							filesystem:src/main/resources/db/migration

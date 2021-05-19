@@ -1,3 +1,23 @@
+CREATE TABLE unidad
+(
+    id   INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    descripcion VARCHAR(10)
+);
+
+CREATE TABLE provision
+(
+    id                   INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fechaProvision       DATETIME         NOT NULL
+);
+
+CREATE TABLE provision_detalle
+(
+    id           INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    cantidad     INTEGER          NOT NULL,
+    provision_id INTEGER UNSIGNED NOT NULL,
+    CONSTRAINT fk_provision_provision_detalle FOREIGN KEY (provision_id) REFERENCES provision (id)
+);
+
 CREATE TABLE material
 (
     id              INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -31,15 +51,4 @@ CREATE TABLE provision
     CONSTRAINT fk_provision_detalle_provision FOREIGN KEY (provision_detalle_id) REFERENCES provision_detalle (id)
 );
 
-CREATE TABLE provision_detalle
-(
-    id           INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    cantidad     INTEGER NOT NULL,
-    provision_id INTEGER UNSIGNED NOT NULL,
-    CONSTRAINT fk_provision_provision_detalle FOREIGN KEY (provision_id) REFERENCES provision (id)
-);
-CREATE TABLE unidad
-(
-    id   INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    descripcion VARCHAR(10)
-);
+
