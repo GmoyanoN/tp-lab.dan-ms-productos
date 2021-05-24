@@ -3,6 +3,8 @@ package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.persistence.*;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @JsonIdentityInfo(scope = MovimientosStock.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -12,7 +14,7 @@ public class MovimientosStock {
     private Integer id;
     private Integer cantidadEntrada;
     private Integer cantidadSalida;
-    private Instant Fecha;
+    private LocalDateTime Fecha;
     @OneToOne
     private Producto producto;
     @OneToOne
@@ -20,7 +22,7 @@ public class MovimientosStock {
     @Transient
     private DetallePedido detallePedido;
 
-    public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha, Producto producto, ProvisionDetalle provisionDetalle, DetallePedido detallePedido) {
+    public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, LocalDateTime fecha, Producto producto, ProvisionDetalle provisionDetalle, DetallePedido detallePedido) {
         this.id = id;
         this.cantidadEntrada = cantidadEntrada;
         this.cantidadSalida = cantidadSalida;
@@ -44,7 +46,7 @@ public class MovimientosStock {
 
     public void setCantidadSalida(Integer cantidadSalida) {this.cantidadSalida = cantidadSalida; }
 
-    public Instant getFecha() { return Fecha; }
+    public LocalDateTime getFecha() { return Fecha; }
 
-    public void setFecha(Instant fecha) {Fecha = fecha;}
+    public void setFecha(LocalDateTime fecha) {Fecha = fecha;}
 }

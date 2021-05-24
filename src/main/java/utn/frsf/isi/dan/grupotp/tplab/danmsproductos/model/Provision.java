@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,13 +14,14 @@ public class Provision {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private LocalDate fechaProvision;
-    @OneToOne
-    private ProvisionDetalle provisionDetalle;
+    private LocalDateTime fechaProvision;
+    @OneToMany(mappedBy = "provision")
+    private List<ProvisionDetalle> provisionDetalle;
 
-    public Provision(Integer id, LocalDate fechaProvision) {
+    public Provision(Integer id, LocalDateTime fechaProvision, List<ProvisionDetalle> provisionDetalle) {
         this.id = id;
         this.fechaProvision = fechaProvision;
+        this.provisionDetalle = provisionDetalle;
     }
 
     public Provision() {
@@ -29,7 +31,15 @@ public class Provision {
 
     public void setId(Integer id) {this.id = id;}
 
-    public LocalDate getFechaProvision() {return fechaProvision;}
+    public LocalDateTime getFechaProvision() {return fechaProvision;}
 
-    public void setFechaProvision(LocalDate fechaProvision) {this.fechaProvision = fechaProvision;}
+    public void setFechaProvision(LocalDateTime fechaProvision) {this.fechaProvision = fechaProvision;}
+
+    public List<ProvisionDetalle> getProvisionDetalle() {
+        return provisionDetalle;
+    }
+
+    public void setProvisionDetalle(List<ProvisionDetalle> provisionDetalle) {
+        this.provisionDetalle = provisionDetalle;
+    }
 }

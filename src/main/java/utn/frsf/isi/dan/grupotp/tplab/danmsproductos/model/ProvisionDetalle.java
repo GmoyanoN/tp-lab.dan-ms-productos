@@ -11,7 +11,8 @@ public class ProvisionDetalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer cantidad;
-    @OneToOne
+    @JsonIdentityReference(alwaysAsId = true)
+    @ManyToOne
     private Provision provision;
     @OneToOne
     private Producto producto;
