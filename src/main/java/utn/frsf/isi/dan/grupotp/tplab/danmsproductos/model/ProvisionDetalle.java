@@ -3,8 +3,6 @@ package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 @JsonIdentityInfo(scope = ProvisionDetalle.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -16,13 +14,13 @@ public class ProvisionDetalle {
     @OneToOne
     private Provision provision;
     @OneToOne
-    private Material material;
+    private Producto producto;
 
-    public ProvisionDetalle(Integer id, Integer cantidad, Provision provision, Material material) {
+    public ProvisionDetalle(Integer id, Integer cantidad, Provision provision, Producto producto) {
         this.id = id;
         this.cantidad = cantidad;
         this.provision = provision;
-        this.material = material;
+        this.producto = producto;
     }
 
     public ProvisionDetalle() {

@@ -3,12 +3,10 @@ package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
-@JsonIdentityInfo(scope= Material.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Material {
+@JsonIdentityInfo(scope= Producto.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -20,7 +18,7 @@ public class Material {
     @OneToOne
     private Unidad unidad;
 
-    public Material(Integer id, String nombre, String descripcion, Double precio, Integer stockActual, Integer stockMinimo, Unidad unidad) {
+    public Producto(Integer id, String nombre, String descripcion, Double precio, Integer stockActual, Integer stockMinimo, Unidad unidad) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -30,7 +28,7 @@ public class Material {
         this.unidad = unidad;
     }
 
-    public Material (){}
+    public Producto(){}
 
     public Integer getId() { return id; }
 
@@ -56,5 +54,11 @@ public class Material {
 
     public void setStockMinimo(Integer stockMinimo) { this.stockMinimo = stockMinimo; }
 
+    public Unidad getUnidad() {
+        return unidad;
+    }
 
+    public void setUnidad(Unidad unidad) {
+        this.unidad = unidad;
+    }
 }

@@ -3,8 +3,6 @@ package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 import com.fasterxml.jackson.annotation.*;
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 @JsonIdentityInfo(scope = MovimientosStock.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -16,18 +14,18 @@ public class MovimientosStock {
     private Integer cantidadSalida;
     private Instant Fecha;
     @OneToOne
-    private Material material;
+    private Producto producto;
     @OneToOne
     private ProvisionDetalle provisionDetalle;
     @Transient
     private DetallePedido detallePedido;
 
-    public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha, Material material, ProvisionDetalle provisionDetalle, DetallePedido detallePedido) {
+    public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, Instant fecha, Producto producto, ProvisionDetalle provisionDetalle, DetallePedido detallePedido) {
         this.id = id;
         this.cantidadEntrada = cantidadEntrada;
         this.cantidadSalida = cantidadSalida;
         this.Fecha = fecha;
-        this.material = material;
+        this.producto = producto;
         this.provisionDetalle = provisionDetalle;
         this.detallePedido = detallePedido;
     }
