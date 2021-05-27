@@ -1,15 +1,20 @@
 package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model;
 
-public class DetallePedido {
+import java.io.Serializable;
+
+public class DetallePedido implements Serializable {
+    private static final long serialVersionUID= -6142650329999645598L;
     private Integer id;
     private Integer cantidad;
+    private Integer productoId;
 
     public DetallePedido() {
     }
 
-    public DetallePedido(Integer id, Integer cantidad) {
+    public DetallePedido(Integer id, Integer cantidad, Integer productoId) {
         this.id = id;
         this.cantidad = cantidad;
+        this.productoId = productoId;
     }
 
     public Integer getId() {

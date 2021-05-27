@@ -39,8 +39,8 @@ CREATE TABLE movimientos_stock
     cantidad_salida      INTEGER          NOT NULL,
     fecha                DATETIME         NOT NULL,
     producto_id          INTEGER UNSIGNED NOT NULL,
-    provision_detalle_id INTEGER UNSIGNED NOT NULL,
-    detalle_pedido_id    INTEGER UNSIGNED NOT NULL,
+    provision_detalle_id INTEGER UNSIGNED,
+    detalle_pedido_id    INTEGER UNSIGNED,
     CONSTRAINT fk_producto_movimientos_stock FOREIGN KEY (producto_id) REFERENCES producto (id),
     CONSTRAINT fk_provision_detalle_movimientos_stock FOREIGN KEY (provision_detalle_id) REFERENCES provision_detalle (id)
 );

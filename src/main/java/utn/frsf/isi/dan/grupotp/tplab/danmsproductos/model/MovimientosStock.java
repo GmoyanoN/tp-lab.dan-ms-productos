@@ -21,6 +21,7 @@ public class MovimientosStock {
     private ProvisionDetalle provisionDetalle;
     @Transient
     private DetallePedido detallePedido;
+    private Integer detallePedidoId;
 
     public MovimientosStock(Integer id, Integer cantidadEntrada, Integer cantidadSalida, LocalDateTime fecha, Producto producto, ProvisionDetalle provisionDetalle, DetallePedido detallePedido) {
         this.id = id;
@@ -49,4 +50,36 @@ public class MovimientosStock {
     public LocalDateTime getFecha() { return Fecha; }
 
     public void setFecha(LocalDateTime fecha) {Fecha = fecha;}
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public ProvisionDetalle getProvisionDetalle() {
+        return provisionDetalle;
+    }
+
+    public void setProvisionDetalle(ProvisionDetalle provisionDetalle) {
+        this.provisionDetalle = provisionDetalle;
+    }
+
+    public DetallePedido getDetallePedido() {
+        return detallePedido;
+    }
+
+    public void setDetallePedido(DetallePedido detallePedido) {
+        this.detallePedido = detallePedido;
+    }
+
+    public Integer getDetallePedidoId() {
+        return detallePedidoId;
+    }
+
+    public void setDetallePedidoId(Integer detallePedidoId) {
+        this.detallePedidoId = detallePedidoId;
+    }
 }
