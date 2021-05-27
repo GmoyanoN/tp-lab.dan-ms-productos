@@ -33,4 +33,11 @@ public class DetallePedido implements Serializable {
         this.cantidad = cantidad;
     }
 
+    public Integer getProductoId() {
+        return productoId;
+    }
+
+    public void setProductoId(Integer productoId) {
+        this.productoId = productoId;
+    }
 }
