@@ -61,7 +61,7 @@ public class ProductoServiceImplementation implements ProductoService {
             movimientosStock.setCantidadEntrada(0);
             movimientosStock.setCantidadSalida(dp.getCantidad());
             movimientosStock.setDetallePedidoId(dp.getId());
-            movimientosStock.setProducto(productoRepository.findById(dp.getProductoId()).get());
+            movimientosStock.setProducto(productoRepository.findById(dp.getProductoId()).orElse(null));
             movimientosStock = movimientosStockRepository.save(movimientosStock);
             actualizarStock(movimientosStock);
         });
