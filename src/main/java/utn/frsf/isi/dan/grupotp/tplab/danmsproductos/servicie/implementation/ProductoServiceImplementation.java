@@ -1,7 +1,6 @@
 package utn.frsf.isi.dan.grupotp.tplab.danmsproductos.servicie.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 import utn.frsf.isi.dan.grupotp.tplab.danmsproductos.model.*;
 import utn.frsf.isi.dan.grupotp.tplab.danmsproductos.repositories.MovimientosStockRepository;
@@ -18,11 +17,10 @@ public class ProductoServiceImplementation implements ProductoService {
     private final ProductoRepository productoRepository;
     private final MovimientosStockRepository movimientosStockRepository;
     private final ProvisionRepository provisionRepository;
-    private final JmsTemplate jms;
+
     @Autowired
-    public ProductoServiceImplementation(ProductoRepository productoRepository, JmsTemplate jms, MovimientosStockRepository movimientosStockRepository, ProvisionRepository provisionRepository){
+    public ProductoServiceImplementation(ProductoRepository productoRepository, MovimientosStockRepository movimientosStockRepository, ProvisionRepository provisionRepository){
         this.productoRepository = productoRepository;
-        this.jms = jms;
         this.movimientosStockRepository = movimientosStockRepository;
         this.provisionRepository = provisionRepository;
     }
